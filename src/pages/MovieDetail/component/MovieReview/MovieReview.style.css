@@ -28,6 +28,13 @@
 }
 .open_btn {
   margin-right: 1rem;
+  transform: rotate(0deg);
+  transition: all 1s ease-in-out;
+}
+.close_btn {
+  margin-right: 1rem;
+  transform: rotate(45deg);
+  transition: all 1s ease-in-out;
 }
 @media (max-width: 992px) {
   .author {

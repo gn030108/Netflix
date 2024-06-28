@@ -43,7 +43,7 @@ const MovieReview = ({ review }) => {
           <div className="content">{review.content}</div>
         )}
         {more && (
-          <div className="open_btn">
+          <div className={`${openContent ? "close_btn" : "open_btn"}`}>
             <FontAwesomeIcon
               icon={faPlus}
               onClick={() => setOpenContent(!openContent)}
