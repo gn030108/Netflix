@@ -1,0 +1,73 @@
+.imgBox {
+  max-width: 2000px;
+  max-height: 3000px;
+  width: 100%;
+  min-height: 75vh;
+}
+.mainImg {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  min-height: 75vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid white;
+}
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+.overview {
+  border-top: 2px dashed white;
+  border-bottom: 2px dashed white;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+.genre {
+  height: 30px;
+  line-height: inherit !important;
+}
+.rated {
+  display: flex;
+  font-size: 1rem;
+  margin: 1rem;
+}
+.rated_badge {
+  width: 120px;
+  height: 30px;
+  text-align: center;
+  line-height: inherit !important;
+  margin-left: 2rem;
+}
+.none {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .imgBox {
+    min-height: 45vh;
+  }
+  .mainImg {
+    min-height: 45vh;
+  }
+}
+@media (max-width: 768px) {
+  .rated_badge {
+    width: 90px;
+  }
+  .rated {
+    margin: 0.5rem;
+  }
+}
+@media (max-width: 425px) {
+  .rated_badge {
+    margin-left: 0;
+  }
+  .trailer_btn {
+    width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}

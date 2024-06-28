@@ -1,0 +1,19 @@
+.carousel-container {
+  overflow-x: hidden;
+  overflow-y: visible;
+  height: 500px;
+}
+.carousel-container ul {
+  height: 90%;
+}
+@media (max-width: 480px) {
+  .carousel-container {
+    height: 450px;
+    display: flex;
+    justify-content: space-between;
+    overflow-y: hidden;
+  }
+  .carousel-container ul {
+    height: 100%;
+  }
+}

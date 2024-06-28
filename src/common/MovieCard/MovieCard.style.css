@@ -1,0 +1,34 @@
+.movie_card {
+  background-size: cover;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.movie_card,
+.overlay {
+  width: 100%;
+  height: 100%;
+}
+.overlay {
+  background-color: rgba(43, 41, 41, 0.9);
+  opacity: 0;
+  transition: all 1s;
+  color: white;
+  font-weight: bold;
+  overflow-wrap: break-word;
+}
+.overlay:hover {
+  opacity: 1;
+  border: 1px solid white;
+}
+.movie_card:hover {
+  transform: scale(1.1) translateZ(20px);
+  z-index: 2;
+}
+.video_btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.video_btn button {
+  width: 90%;
+}
