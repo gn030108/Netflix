@@ -1,0 +1,39 @@
+.box {
+  width: 80%;
+  border: 1px solid white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem auto;
+}
+.select {
+  font-size: 1.3rem;
+  margin: 0.8rem;
+  cursor: pointer;
+}
+.selectList {
+  list-style: none;
+  margin: auto;
+  overflow: hidden;
+  width: inherit;
+  padding: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.open {
+  max-height: 70px;
+}
+.close {
+  max-height: 0;
+}
+.selectList li {
+  cursor: pointer;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.selectList li:hover {
+  color: red;
+}

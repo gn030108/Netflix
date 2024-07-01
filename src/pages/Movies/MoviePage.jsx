@@ -14,8 +14,10 @@ import MovieCard from "./../../common/MovieCard/MovieCard";
 import Pagination from "../../common/Pagination/Pagination";
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
 import "./MoviePage.style.css";
+import DropDown from "../../common/DropDown/DropDown";
 
 const MoviePage = () => {
+  const [sort, setSort] = useState("Select");
   const [selectedGenre, setSelectedGenre] = useState([]);
   const [searchWord, setSearchWord] = useState("");
   const [query, setQuery] = useSearchParams();
@@ -36,14 +38,20 @@ const MoviePage = () => {
     } else {
       setSelectedGenre([...selectedGenre, id]);
     }
+    setSort("Select");
   };
-
   let filteredMovies = data?.results;
   if (selectedGenre.length > 0) {
     filteredMovies = data?.results.filter((movie) =>
       movie.genre_ids.some((genreId) => selectedGenre.includes(genreId))
     );
   }
+  if (sort === "Popularity(Desc)") {
+    filteredMovies = filteredMovies.sort((a, b) => b.popularity - a.popularity);
+  } else if (sort === "Popularity(Asc)") {
+    filteredMovies = filteredMovies.sort((a, b) => a.popularity - b.popularity);
+  }
+  console.log(filteredMovies);
 
   if (isLoading) {
     return (
@@ -109,6 +117,10 @@ const MoviePage = () => {
                   </Badge>
                 ))}
               </div>
+            </div>
+            <div style={{ paddingBottom: "1rem" }}>
+              <div className="Genre">Sorts</div>
+              <DropDown sort={sort} setSort={setSort} />
             </div>
           </div>
         </Col>
