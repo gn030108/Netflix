@@ -127,9 +127,9 @@ const MoviePage = () => {
         <Col lg={8} xs={12}>
           <Row>
             {filteredMovies.length === 0 ? (
-              <Col>
+              <div className="None">
                 <div>No movies found for the selected genre</div>
-              </Col>
+              </div>
             ) : (
               filteredMovies.map((movie, index) => (
                 <Col
@@ -146,9 +146,9 @@ const MoviePage = () => {
             )}
           </Row>
           {data.total_results === 0 && (
-            <Row className="None">
+            <div className="None">
               <div>No movies found for the selected genre</div>
-            </Row>
+            </div>
           )}
 
           <div className="PageNation">
