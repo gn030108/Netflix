@@ -17,13 +17,13 @@ import "./MoviePage.style.css";
 import DropDown from "../../common/DropDown/DropDown";
 
 const MoviePage = () => {
-  const [sort, setSort] = useState("Select");
+  const [sort, setSort] = useState("Select"); // 정렬 기능
   const [selectedGenre, setSelectedGenre] = useState([]);
   const [searchWord, setSearchWord] = useState("");
   const [query, setQuery] = useSearchParams();
   const [page, setPage] = useState(1);
   const keyword = query.get("q");
-  const { data: genreData } = useMovieGenreQuery();
+  const { data: genreData } = useMovieGenreQuery(); // 영화 장르 데이터
   const { data, isLoading, isError, error } = useSearchMovieQuery({
     keyword,
     page,
@@ -32,7 +32,9 @@ const MoviePage = () => {
     setQuery({ q: searchWord });
     setSearchWord("");
   };
+  // 장르 필터링 기능
   const handleGenreClick = (id) => {
+    //장르 선택 및 해제
     if (selectedGenre.includes(id)) {
       setSelectedGenre(selectedGenre.filter((g) => g !== id));
     } else {
@@ -41,11 +43,13 @@ const MoviePage = () => {
     setSort("Select");
   };
   let filteredMovies = data?.results;
+  //장르 선택시 영화 필터링 후 출력
   if (selectedGenre.length > 0) {
     filteredMovies = data?.results.filter((movie) =>
       movie.genre_ids.some((genreId) => selectedGenre.includes(genreId))
     );
   }
+  //인기순 정렬 및 역정렬
   if (sort === "Popularity(Desc)") {
     filteredMovies = filteredMovies.sort((a, b) => b.popularity - a.popularity);
   } else if (sort === "Popularity(Asc)") {
@@ -53,6 +57,7 @@ const MoviePage = () => {
   }
   console.log(filteredMovies);
 
+  //로딩시 스피너 출력
   if (isLoading) {
     return (
       <Spinner

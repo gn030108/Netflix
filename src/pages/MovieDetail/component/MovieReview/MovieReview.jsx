@@ -10,6 +10,7 @@ const MovieReview = ({ review }) => {
   const reviewContent = useRef();
 
   useEffect(() => {
+    //리뷰 박스 높이 조절
     const check = () => {
       if (reviewContent.current) {
         if (reviewContent.current.clientHeight <= 60) {

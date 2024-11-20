@@ -12,9 +12,11 @@ const HomePage = () => {
     <div>
       <Banner />
       <div className="px-5">
-        <PopularMovieSlide />
+        <PopularMovieSlide /> {/*인기 영화 목록*/}
         <TopRatedMovieSlide />
+        {/*점수 높은 영화 목록*/}
         <UpcomingMovieSlide />
+        {/*출시 예정 영화 목록*/}
       </div>
     </div>
   );

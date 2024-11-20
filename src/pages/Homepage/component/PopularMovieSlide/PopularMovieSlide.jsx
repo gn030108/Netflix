@@ -8,6 +8,7 @@ import { responsive } from "../../../../constants/responsive";
 const PopularMovieSlide = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   console.log("ddd", data);
+  //로딩중 스피너 출력
   if (isLoading) {
     return (
       <Spinner

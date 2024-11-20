@@ -6,11 +6,13 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Outlet, useNavigate } from "react-router-dom";
 
+//네비바
 const AppLayout = () => {
   const navigate = useNavigate();
 
   const [keyword, setKeyword] = useState("");
 
+  //검색기능
   const searchByKeyword = (event) => {
     event.preventDefault();
 

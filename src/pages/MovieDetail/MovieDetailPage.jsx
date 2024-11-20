@@ -18,6 +18,7 @@ const MovieDetailPage = () => {
   const { data: genreData } = useMovieGenreQuery();
   const { data: videoData } = useMovieVideoQuery({ id });
 
+  //장르 표시
   const showGenre = (genreIdList) => {
     if (!genreData) return [];
     const genreNameList = genreIdList.map((item) => {
@@ -43,7 +44,7 @@ const MovieDetailPage = () => {
   } else {
     document.body.style.overflow = "auto";
   }
-
+  //로딩중 스피너 출력
   if (isLoading) {
     return (
       <Spinner

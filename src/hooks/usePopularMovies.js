@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "../utils/api";
-
+//인기영화 정보 쿼리
 const fetchPopularMovies = () => {
   return api.get(`/movie/popular`);
 };

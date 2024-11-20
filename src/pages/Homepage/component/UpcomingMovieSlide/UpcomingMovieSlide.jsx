@@ -10,6 +10,7 @@ const UpcomingMovieSlide = () => {
 
   if (isLoading) {
     return (
+      //로딩중 스피너 출력
       <Spinner
         animation="border"
         variant="danger"

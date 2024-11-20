@@ -8,6 +8,7 @@ const MovieSlider = ({ title, movies, responsive }) => {
   return (
     <div>
       <h2 className="pt-5">{title}</h2>
+      {/*영화 나열*/}
       <Carousel
         infinite={true}
         centerMode={false}

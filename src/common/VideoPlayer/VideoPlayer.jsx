@@ -8,7 +8,7 @@ const VideoPlayer = ({ videoKey, close }) => {
         <button
           className="close-btn"
           onClick={(event) => {
-            event.stopPropagation();
+            event.stopPropagation(); // 상위 클릭 이벤트 방지
             close();
           }}
         >

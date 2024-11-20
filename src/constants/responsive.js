@@ -1,3 +1,4 @@
+//미디어 쿼리
 export const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
