@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Badge } from "react-bootstrap";
 import "./MovieCard.style.css";
 import IMDB from "../../images/IMDB.jpg";
@@ -16,9 +16,7 @@ const MovieCard = ({ movie }) => {
   const { data: genreData } = useMovieGenreQuery();
   const { data: videoData } = useMovieVideoQuery({ id: movie.id });
 
-  const youtubeVideo = videoData?.find(
-    (video) => video.site === "YouTube" && video.type === "Teaser"
-  );
+  const youtubeVideo = videoData?.find((video) => video.site === "YouTube" && video.type === "Teaser");
 
   const handleOpenModal = () => {
     setOpen(true);
@@ -44,20 +42,14 @@ const MovieCard = ({ movie }) => {
   return (
     <div
       style={{
-        backgroundImage:
-          "url(" +
-          `https://media.themoviedb.org/t/p/w220_and_h330_bestv2${movie.poster_path}` +
-          ")",
+        backgroundImage: "url(" + `https://media.themoviedb.org/t/p/w220_and_h330_bestv2${movie.poster_path}` + ")",
       }}
       className="movie_card"
       onClick={goMovieDetailPage}
     >
       <div className="overlay p-2">
         <div className="p-2">
-          <h3
-            className="fw-bold pt-5"
-            style={{ borderBottom: "2px solid white" }}
-          >
+          <h3 className="fw-bold pt-5" style={{ borderBottom: "2px solid white" }}>
             {movie.title}
           </h3>
         </div>
@@ -90,9 +82,7 @@ const MovieCard = ({ movie }) => {
           )}
         </div>
 
-        {open && youtubeVideo && (
-          <VideoPlayer videoKey={youtubeVideo.key} close={handleCloseModal} />
-        )}
+        {open && youtubeVideo && <VideoPlayer videoKey={youtubeVideo.key} close={handleCloseModal} />}
       </div>
     </div>
   );

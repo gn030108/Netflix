@@ -5,9 +5,7 @@ import "./Banner.style.css";
 const Banner = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   console.log("ddd", data);
-  if (isLoading) {
-    return <h1>isLoading</h1>;
-  }
+
   if (isError) {
     return <Alert variant="danger">{error.message}</Alert>;
   }
@@ -15,10 +13,7 @@ const Banner = () => {
   return (
     <div
       style={{
-        backgroundImage:
-          "url(" +
-          `https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${data?.results[0].poster_path}` +
-          ")",
+        backgroundImage: `url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${data?.results[0].poster_path})`,
       }}
       className="banner"
     >

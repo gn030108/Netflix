@@ -28,9 +28,7 @@ const MovieDetailPage = () => {
     return genreNameList;
   };
 
-  const youtubeVideo = videoData?.find(
-    (video) => video.site === "YouTube" && video.type === "Teaser"
-  );
+  const youtubeVideo = videoData?.find((video) => video.site === "YouTube" && video.type === "Teaser");
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -66,9 +64,7 @@ const MovieDetailPage = () => {
 
   return (
     <>
-      {showModal && youtubeVideo && (
-        <VideoPlayer videoKey={youtubeVideo.key} close={handleCloseModal} />
-      )}
+      {showModal && youtubeVideo && <VideoPlayer videoKey={youtubeVideo.key} close={handleCloseModal} />}
       <Container>
         <Row className="mt-5">
           <Col lg={6} xs={12}>
@@ -142,11 +138,7 @@ const MovieDetailPage = () => {
             </div>
             {youtubeVideo && (
               <Row className="mt-5">
-                <button
-                  type="button"
-                  className="btn btn-dark trailer_btn"
-                  onClick={handleOpenModal}
-                >
+                <button type="button" className="btn btn-dark trailer_btn" onClick={handleOpenModal}>
                   Watch Trailer
                 </button>
               </Row>
@@ -155,9 +147,7 @@ const MovieDetailPage = () => {
         </Row>
         <Row className="mt-5">
           <h2 className="mb-5">Reviews</h2>
-          {reviewData?.length === 0 && (
-            <div className="none">There are no reviews for this movie</div>
-          )}
+          {reviewData?.length === 0 && <div className="none">There are no reviews for this movie</div>}
           {reviewData?.map((review, index) => (
             <MovieReview review={review} key={index} />
           ))}
